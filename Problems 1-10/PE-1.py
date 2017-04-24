@@ -11,12 +11,20 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 Check if divisible by 3 or 5, sum values
 
+Pseudocode:
+
+sum = 0
+for int i to max:
+    if i mod 3 % 0 or i mod 5 % 0
+    sum += i
+print sum 
+
 General case is O(m)
 """
 max = 1000
 
 def bruteForce (n1,  n2): 
-    sum =0
+    sum = 0
     for x in range (0,  max):
         if (x % n1 == 0) or (x % n2 == 0):
             sum += x
@@ -27,6 +35,16 @@ def bruteForce (n1,  n2):
 Observe that
 3 + 6 + 9 ... + 999 = 3 (1 + 2 ...+ 333)
 Use identity: 1 + 2 + 3 ... + n  = n(1+ n)/2
+
+Psuedocode
+
+sum = 0
+
+multiples1 = 3*(arithmetic series up to 1000/3)
+multiples2 = 5*(arithmetic series up to 1000/5)
+multiples3 = 15*(arithmetic series up to 1000/15)
+
+print multiples1 + multiples2 - multiples3
 
 General Case O(1)
 """
